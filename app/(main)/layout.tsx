@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../globals.css';
-import Navigation from './_components/navigation';
+import Header from '@/components/header';
+import { Toaster } from '@/components/ui/toaster';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,8 +19,11 @@ export default function MainLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <Navigation />
-        {children}
+        <main className="max-w-7xl mx-auto">
+          <Header />
+          {children}
+        </main>
+        <Toaster />
       </body>
     </html>
   );
