@@ -31,14 +31,26 @@ const Page: React.FC = () => {
           있는 장치입니다.
         </p>
         <div>
-          <code ref={(el) => (codeRefs.current[0] = el)}>npm install</code>{' '}
+          <code
+            ref={(el) => {
+              codeRefs.current[0] = el;
+            }}
+          >
+            npm install
+          </code>{' '}
           <span># 코드를 복사하고 라벨을 추가하세요</span>
           <button onClick={() => handleCopy(0)}>
             <Clipboard />
           </button>
         </div>
         <div>
-          <code ref={(el) => (codeRefs.current[1] = el)}>npm install 222</code>{' '}
+          <code
+            ref={(el) => {
+              codeRefs.current[1] = el;
+            }}
+          >
+            npm install 222
+          </code>{' '}
           <span># 코드를 복사하고 라벨을 추가하세요</span>
           <button onClick={() => handleCopy(1)}>
             <Clipboard />

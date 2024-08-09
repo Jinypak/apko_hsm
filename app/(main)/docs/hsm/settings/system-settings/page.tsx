@@ -6,7 +6,7 @@ import { Clipboard } from 'lucide-react';
 import Image from 'next/image';
 import React, { useRef } from 'react';
 
-const page = () => {
+const Page = () => {
   const codeRefs = useRef<(HTMLElement | null)[]>([]);
   const { toast } = useToast();
 
@@ -32,7 +32,13 @@ const page = () => {
       <p>접속 후 HSM 정보를 확인하려면 LunaSH에 다음의 명령어를 입력합니다.</p>
       <div className="codeSnippet">
         <div className="flex ">
-          <code ref={(el) => (codeRefs.current[0] = el)}>hsm show</code>{' '}
+          <code
+            ref={(el) => {
+              codeRefs.current[0] = el;
+            }}
+          >
+            hsm show
+          </code>
           <span className="clipComment">
             # 코드를 복사하고 라벨을 추가하세요
           </span>
@@ -82,4 +88,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

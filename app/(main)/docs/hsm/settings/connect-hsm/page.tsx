@@ -43,7 +43,11 @@ const Page: React.FC = () => {
         <p>이후, 다음의 CLI 명령어를 이용하여 변경할 수 있습니다.</p>
         <div className="codeSnippet">
           <div className="flex ">
-            <code ref={(el) => (codeRefs.current[0] = el)}>
+            <code
+              ref={(el) => {
+                codeRefs.current[0] = el;
+              }}
+            >
               my password set
             </code>{' '}
             <span className="clipComment">
@@ -59,7 +63,13 @@ const Page: React.FC = () => {
           </Button>
         </div>
         <div>
-          <code ref={(el) => (codeRefs.current[1] = el)}>npm install 222</code>{' '}
+          <code
+            ref={(el) => {
+              codeRefs.current[1] = el;
+            }}
+          >
+            npm install 222
+          </code>{' '}
           <span># 코드를 복사하고 라벨을 추가하세요</span>
           <Button onClick={() => handleCopy(1)}>
             <Clipboard />
