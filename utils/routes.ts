@@ -21,6 +21,17 @@ export const SERVICE_ROUTE = [
   },
 ];
 
+export const COM_ROUTE = [
+  {
+    url: '/manage/history',
+    label: 'HISTORY',
+  },
+  {
+    url: '/manage/schedule',
+    label: 'SCHEDULE',
+  },
+];
+
 export const DOCS_ROUTE = [
   {
     url: '/docs/hsm/enter-hsm',

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { DOCS_ROUTE } from '@/utils/routes';
+import { DOCS_ROUTE, COM_ROUTE } from '@/utils/routes';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,10 +11,14 @@ import {
   NavigationMenuTrigger,
   NavigationMenuViewport,
 } from '@/components/ui/navigation-menu';
+import SignIn from './sign-in';
+import { SignOut } from './sign-out';
 
-type Props = {};
+type Props = {
+  session: any;
+};
 
-const Navigation = (props: Props) => {
+const Navigation = ({ session }: Props) => {
   return (
     <>
       <Link href="/about">ABOUT</Link>
@@ -38,6 +42,34 @@ const Navigation = (props: Props) => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      {session?.user ? (
+        <>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>MANAGE</NavigationMenuTrigger>
+                <NavigationMenuContent className="flex flex-col">
+                  {COM_ROUTE.map((route) => {
+                    return (
+                      <Link
+                        href={route.url}
+                        key={route.url}
+                        className="p-2 w-[100px] hover:bg-slate-200 transition"
+                      >
+                        <NavigationMenuLink>{route.label}</NavigationMenuLink>
+                      </Link>
+                    );
+                  })}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <SignOut />
+        </>
+      ) : (
+        <SignIn />
+      )}
     </>
   );
 };
