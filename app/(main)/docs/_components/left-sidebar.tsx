@@ -4,7 +4,7 @@ import { HSM_DOCS_ROUTE } from '@/utils/routes';
 
 const LeftSidebar = () => {
   return (
-    <section className="sticky max-w-[200px] w-full p-4">
+    <section className="max-w-[200px] w-full p-4">
       {HSM_DOCS_ROUTE.map((route) => {
         return (
           <div key={route.url}>

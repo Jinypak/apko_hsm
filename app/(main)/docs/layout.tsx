@@ -4,7 +4,7 @@ import RightSidebar from './_components/right-sidebar';
 
 const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex max-h-screen">
+    <main className="flex max-h-screen overflow-hidden">
       <LeftSidebar />
       {children}
       <RightSidebar />

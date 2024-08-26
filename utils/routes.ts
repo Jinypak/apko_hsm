@@ -23,15 +23,15 @@ export const SERVICE_ROUTE = [
 
 export const DOCS_ROUTE = [
   {
-    url: 'docs/hsm/enter-hsm',
+    url: '/docs/hsm/enter-hsm',
     label: 'HSM',
   },
   {
-    url: 'docs/pse/enter-pse',
+    url: '/docs/pse/enter-pse',
     label: 'PSE',
   },
   {
-    url: 'docs/ctm/enter-ctm',
+    url: '/docs/ctm/enter-ctm',
     label: 'CTM',
   },
 ];

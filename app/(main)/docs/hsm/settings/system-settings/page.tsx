@@ -10,7 +10,7 @@ const Page = () => {
   const codeRefs = useRef<(HTMLElement | null)[]>([]);
   const { toast } = useToast();
 
-  const handleCopy = (index: number) => {
+  const handleCopy = (index: number = 0) => {
     const textToCopy = codeRefs.current[index]?.innerText;
     if (textToCopy) {
       navigator.clipboard
@@ -43,7 +43,7 @@ const Page = () => {
             # 코드를 복사하고 라벨을 추가하세요
           </span>
         </div>
-        <Button type="button" variant="outline" onClick={() => handleCopy(0)}>
+        <Button type="button" variant="outline" onClick={() => handleCopy()}>
           <Clipboard />
         </Button>
       </div>
