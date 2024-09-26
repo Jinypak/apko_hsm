@@ -3,7 +3,7 @@ import ServiceProduct from './_components/service-product';
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <ImageContainer />
       <ServiceProduct />
     </div>

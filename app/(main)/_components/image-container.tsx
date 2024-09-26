@@ -5,7 +5,7 @@ type Props = {};
 
 const ImageContainer = (props: Props) => {
   return (
-    <div>
+    <div className="">
       <Image
         src="/main1.png"
         width={1280}

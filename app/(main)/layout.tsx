@@ -19,7 +19,7 @@ export default function MainLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <main className="max-w-7xl mx-auto">
+        <main className="mx-auto">
           <Header />
           {children}
         </main>
