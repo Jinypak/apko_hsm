@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import '../globals.css';
 import Header from '@/components/header';
 import { Toaster } from '@/components/ui/toaster';
+import MobileHeader from '@/components/mobile/mobile-header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,7 +21,12 @@ export default function MainLayout({
     <html lang="ko">
       <body className={inter.className}>
         <main className="mx-auto">
-          <Header />
+          <div className="hidden sm:block">
+            <Header />
+          </div>
+          <div className="sm:hidden">
+            <MobileHeader />
+          </div>
           {children}
         </main>
         <Toaster />
