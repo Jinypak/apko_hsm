@@ -30,6 +30,10 @@ export const COM_ROUTE = [
     url: '/manage/schedule',
     label: 'SCHEDULE',
   },
+  {
+    url: '/manage/worklog',
+    label: '업무 보고',
+  },
 ];
 
 export const DOCS_ROUTE = [

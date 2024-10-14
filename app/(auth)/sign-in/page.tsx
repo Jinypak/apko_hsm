@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
+import SignIn from '@/components/sign-in';
 
 const FormSchema = z.object({
   username: z.string().min(2, {
@@ -99,6 +100,10 @@ export default function SignInPage() {
           </div>
         </form>
       </Form>
+
+      <div>
+        <SignIn option="google" />
+      </div>
       <Toaster />
     </div>
   );

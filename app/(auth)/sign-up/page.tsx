@@ -41,9 +41,15 @@ export default function SignUpPage() {
   });
 
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
-    await fetch('http://localhost:3000/api/hsm', {
-      method: 'GET',
-      //   body: { username: data.username, password: data.password },
+    await fetch('/api/hsm', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: data.username,
+        password: data.password,
+      }),
     }).then((res) => console.log(res));
 
     toast({

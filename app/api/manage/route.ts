@@ -1,12 +1,24 @@
 import { NextResponse, NextRequest } from 'next/server';
+import { createClient } from 'redis';
 
 export async function GET(request: NextRequest) {
   const req = request;
-  return NextResponse.json({ response: 'RESPONSE TEXT' }, { status: 200 });
+
+  const client = createClient({
+    url: 'redis://localhost:6379',
+  });
+
+  client.on('error', (err) => console.log('Redis Client Error', err));
+
+  await client.connect();
+  await client.set('c', 'd');
+
+  const response = await client.get('c').then((r) => r);
+  console.log(response);
+
+  return NextResponse.json({ response: response }, { status: 200 });
 }
 
-// NEXTJS API 테스트
-// 스프링부트와 통합 테스트 예정
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
