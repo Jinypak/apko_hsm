@@ -47,15 +47,20 @@ const dummyInputData = [
 
 const WriteLog = ({ username }: Props) => {
   const [inputLog, setInputLog] = useState(dummyInputData);
+  const [testResult, setTestResult] = useState(null);
+  const createAt = new Date().toLocaleString();
 
   const handleInput = async () => {
-    const fetchTest = await fetch('/api/manage', {
-      method: 'GET',
+    const fetchTest = await fetch('/api/manage/worklog', {
+      method: 'POST',
+      body: JSON.stringify({
+        ...inputLog,
+        createAt,
+      }),
     });
 
-    const data = fetchTest.json().then((r) => r.response);
-
-    console.log(data);
+    const result = await fetchTest.json().then((r) => r.message);
+    setTestResult(result);
   };
 
   const form = useForm<z.infer<typeof FormSchema>>({
@@ -89,6 +94,7 @@ const WriteLog = ({ username }: Props) => {
   return (
     <div className="w-[500px] p-4">
       <div className="flex flex-col gap-2">
+        <div>{testResult ? <>{testResult}</> : <>비어있음</>}</div>
         <div className="flex flex-col gap-2 py-2">
           {inputLog.map((i) => (
             <div key={i.id}>{i.textData}</div>
