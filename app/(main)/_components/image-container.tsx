@@ -14,7 +14,7 @@ const ImageContainer = (props: Props) => {
         className="w-full"
         alt="main image"
       />
-      <CodeSpace />
+      {/* <CodeSpace /> */}
     </div>
   );
 };

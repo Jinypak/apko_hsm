@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import SignIn from './sign-in';
 import { SignOut } from './sign-out';
+import { Button } from './ui/button';
 
 type Props = {
   session: any;
@@ -29,13 +30,13 @@ const Navigation = ({ session }: Props) => {
             <NavigationMenuContent className="flex flex-col">
               {DOCS_ROUTE.map((route) => {
                 return (
-                  <Link
+                  <NavigationMenuLink
                     href={route.url}
                     key={route.url}
                     className="p-2 w-[100px] hover:bg-slate-200 transition"
                   >
-                    <NavigationMenuLink>{route.label}</NavigationMenuLink>
-                  </Link>
+                    {route.label}
+                  </NavigationMenuLink>
                 );
               })}
             </NavigationMenuContent>
@@ -43,6 +44,7 @@ const Navigation = ({ session }: Props) => {
         </NavigationMenuList>
       </NavigationMenu>
 
+      <Link href="/contact">CONTACT</Link>
       {session?.user ? (
         <>
           <NavigationMenu>
@@ -68,7 +70,9 @@ const Navigation = ({ session }: Props) => {
           <SignOut />
         </>
       ) : (
-        <SignIn />
+        <Link href="/sign-in">
+          <Button>Sign In</Button>
+        </Link>
       )}
     </>
   );

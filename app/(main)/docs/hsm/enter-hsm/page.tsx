@@ -22,7 +22,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <div className="container">
+    <div className="docsContainer">
       <h1 className="title">HSM</h1>
       <div>
         <h2 className="subTitle">HSM에 대하여 </h2>

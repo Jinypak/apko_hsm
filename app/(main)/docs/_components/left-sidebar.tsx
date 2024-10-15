@@ -4,19 +4,22 @@ import { HSM_DOCS_ROUTE } from '@/utils/routes';
 
 const LeftSidebar = () => {
   return (
-    <section className="max-w-[200px] w-full p-4 hidden sm:block">
+    <section className="max-w-[250px] w-full px-6 py-4 hidden sm:block">
       {HSM_DOCS_ROUTE.map((route) => {
         return (
-          <div key={route.url}>
+          <div key={route.url} className="">
             <Link href={route.url} className="font-semibold">
               {route.label}
             </Link>
-            <div className="mt-1">
+            <div className="py-2">
               {route.subUrl.map((subRoute) => {
                 return (
-                  <div className="ml-3 py-1" key={subRoute.url}>
+                  <div
+                    className="ml-3 py-1 hover:bg-slate-200 rounded-sm transition"
+                    key={subRoute.url}
+                  >
                     <Link href={route.url + subRoute.url}>
-                      - {subRoute.label}
+                      {subRoute.label}
                     </Link>
                   </div>
                 );

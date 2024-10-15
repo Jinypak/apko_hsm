@@ -24,23 +24,27 @@ const Page: React.FC = () => {
   return (
     <div className="container">
       <h1 className="title">LunaSH 접속</h1>
-      <p>
-        HSM에 접속에는 직렬 접속<span>Serial</span>과 SSH를 이용하여 Luna CLI인
-        LunaSH에 접속할 수 있습니다.
+      <p className="text">
+        HSM에 접속에는 직렬 접속<span>Serial</span>과 SSH를 이용하여 LunaSH에
+        접속할 수 있습니다.
       </p>
       <div>
         <h2 className="subTitle">Serial 접속</h2>
         <p className="text">
-          동봉된 Luna K7용 Cable을 이용하여 후방 Port에 붙인 뒤 Putty로
+          동봉된 Luna K7용 Cable을 이용하여 후방 Port 연결 후 Putty로
           접속합니다. 설정값은 다음과 같습니다.
         </p>
-        <p>BPS ( Putty의 경우 Speed ) : 115200</p>
-        <p>계정 : admin</p>
-        <p>
-          패스워드 : password <span># 초기 비밀번호</span>
+        <div className="textTemplate">
+          <p>계정 : admin</p>
+          <p>
+            패스워드 : password <span># 초기 비밀번호</span>
+          </p>
+          <p>BPS ( Putty의 경우 Speed ) : 115200</p>
+          <p>접속 후 초기 비밀번호를 세팅합니다.</p>
+        </div>
+        <p className="text">
+          이후, 다음의 CLI 명령어를 이용하여 변경할 수 있습니다.
         </p>
-        <p>접속 후 초기 비밀번호를 세팅합니다.</p>
-        <p>이후, 다음의 CLI 명령어를 이용하여 변경할 수 있습니다.</p>
         <div className="codeSnippet">
           <div className="flex ">
             <code

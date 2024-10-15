@@ -3,21 +3,25 @@ export const SERVICE_ROUTE = [
     href: '/about/hsm',
     label: 'HSM',
     image: '',
+    description: 'Thales HSM은 전세계 최고의 보안 솔루션을 제공합니다.',
   },
   {
     href: '/about/ctm',
     label: 'CTM',
     image: '',
+    description: '',
   },
   {
     href: '/about/storage',
     label: 'STORAGE',
     image: '',
+    description: '',
   },
   {
     href: '/about/cloud',
     label: 'CLOUD',
     image: '',
+    description: '',
   },
 ];
 

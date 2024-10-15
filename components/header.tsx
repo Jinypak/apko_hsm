@@ -14,15 +14,13 @@ const Header = async () => {
       }
     >
       <div className="flex flex-1">
-        <Link href="/">LOGO</Link>
+        <Link href="/">LOGOS</Link>
       </div>
       <div className="flex flex-1">IMAGE</div>
       <div className="flex justify-around items-center gap-4">
         <Navigation session={session} />
         {session?.user ? <UserAvatar /> : null}
       </div>
-      {/* 스크롤 감지 기능 마이그레이션 필요 */}
-      {/* <Indicator /> */}
     </div>
   );
 };
